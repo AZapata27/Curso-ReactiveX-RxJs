@@ -3,11 +3,11 @@ import {asyncScheduler, debounceTime, distinct, distinctUntilChanged, fromEvent,
 const click$ = fromEvent(document,'click')
 
 click$.pipe(
-   throttleTime(2000, asyncScheduler,{
-       leading: true,
-       trailing: true
+    throttleTime(2000, asyncScheduler,{
+        leading: true,
+        trailing: true
 
-   })
+    })
 ).subscribe({
     next: val => console.log('Next: ', val),
     complete: () => console.log('Complete')
