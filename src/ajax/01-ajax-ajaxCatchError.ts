@@ -12,7 +12,7 @@ fetchPromesa.then( resp=> resp.json().then( console.log)).catch()*/
 
 
 import {ajax} from "rxjs/ajax";
-import {catchError, map, of, pluck} from "rxjs";
+import {catchError, of, pluck} from "rxjs";
 
 
 
@@ -24,3 +24,9 @@ ajax(url).pipe(
         return of([]);
     })
 ).subscribe( console.log)
+
+const url2 ='https://httpbin.org/delay/1'
+
+const obs$ = ajax.getJSON(url2);
+
+obs$.subscribe(console.log)
